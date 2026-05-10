@@ -73,7 +73,7 @@ body {
 }
 
 @utility border-main {
-  @apply border-lightColor/20;
+  @apply border-main;
 }
 
 @theme inline {

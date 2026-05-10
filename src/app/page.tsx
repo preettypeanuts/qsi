@@ -1,4 +1,5 @@
 import { CertificationProcess } from "@/components/certification-process";
+import { CTA } from "@/components/cta";
 import { HeroHome } from "@/components/hero-home";
 import { ServicesPreview } from "@/components/service-preview";
 import { ShortAbout } from "@/components/short-about";
@@ -13,6 +14,7 @@ export default function Home() {
       <WhyUs />
       <ServicesPreview />
       <CertificationProcess />
+      <CTA />
     </>
   );
 }

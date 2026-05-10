@@ -13,7 +13,7 @@ const navigation = [
     },
     {
         label: "About",
-        href: "/about",
+        href: "/tentang-kami",
     },
     {
         label: "Services",

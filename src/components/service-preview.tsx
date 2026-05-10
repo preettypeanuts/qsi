@@ -83,7 +83,7 @@ export const ServicesPreview = () => {
                                         className="object-cover transition-transform duration-500 group-hover:scale-105"
                                     />
 
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+                                    <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/10 to-transparent" />
 
                                     {/* Icon */}
                                     <div className="absolute left-5 top-5 flex size-14 items-center justify-center rounded-2xl bg-white/10 text-white backdrop-blur-xl">
