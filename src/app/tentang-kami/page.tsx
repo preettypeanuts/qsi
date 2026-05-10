@@ -1,4 +1,6 @@
+import { CompanyStory } from "@/components/company-story";
 import { ReusablePageHero } from "@/components/page-hero";
+import { VisionMission } from "@/components/visi-misi";
 import { pageHeroData } from "@/data/page-hero-data";
 
 export default function AboutUsPage() {
@@ -12,6 +14,8 @@ export default function AboutUsPage() {
                 image={t.image}
                 breadcrumbs={t.breadcrumbs}
             />
+            <CompanyStory />
+            <VisionMission />
         </>
     )
 }
