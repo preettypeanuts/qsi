@@ -8,24 +8,24 @@ import { usePathname } from "next/navigation";
 
 const navigation = [
     {
-        label: "Home",
+        label: "Beranda",
         href: "/",
     },
     {
-        label: "About",
+        label: "Tentang Kami",
         href: "/tentang-kami",
     },
     {
-        label: "Services",
-        href: "/services",
+        label: "Layanan",
+        href: "/layanan",
     },
     {
         label: "FAQ",
         href: "/faq",
     },
     {
-        label: "Contact",
-        href: "/contact",
+        label: "Kontak",
+        href: "/kontak",
     },
 ];
 
