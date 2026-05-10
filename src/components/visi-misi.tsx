@@ -8,7 +8,7 @@ export const VisionMission = () => {
     return (
         <section className="spacing">
             <div className="">
-                <div className="overflow-hidden rounded-[2.5rem] bg-mainColor text-lightColor py-20">
+                <div className="overflow-hidden rounded-main bg-mainColor text-lightColor py-20">
 
                     <div className="padding">
 
