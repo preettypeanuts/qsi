@@ -7,8 +7,9 @@ import {
 
 import "./globals.css";
 
-import { Navbar } from "@/components/common/navbar";
+
 import { Footer } from "@/components/common/footer";
+import { Navbar } from "@/components/common/Navbar";
 
 const pjs = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta",

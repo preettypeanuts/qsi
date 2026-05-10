@@ -1,0 +1,97 @@
+import type { Metadata } from "next";
+
+import { ContactSection } from "@/components/contact-section";
+import { FaqContact } from "@/components/faq";
+import { Maps } from "@/components/maps";
+import { ReusablePageHero } from "@/components/page-hero";
+
+import { pageHeroData } from "@/data/page-hero-data";
+
+export const metadata: Metadata = {
+    title:
+        "Kontak QSI Certification",
+
+    description:
+        "Hubungi QSI Certification untuk konsultasi sertifikasi ISO, audit, dan layanan sertifikasi profesional di Indonesia. Tim kami siap membantu kebutuhan organisasi Anda.",
+
+    keywords: [
+        "Kontak QSI",
+        "QSI Certification",
+        "Konsultasi ISO",
+        "Sertifikasi ISO Indonesia",
+        "Lembaga Sertifikasi",
+        "Audit ISO",
+        "Kontak Sertifikasi ISO",
+        "ISO 9001 Indonesia",
+        "ISO 14001",
+        "ISO 45001",
+    ],
+
+    openGraph: {
+        title:
+            "Kontak QSI Certification | Konsultasi Sertifikasi ISO",
+
+        description:
+            "Hubungi tim profesional QSI untuk kebutuhan sertifikasi ISO, audit, dan konsultasi bisnis Anda.",
+
+        url: "https://qsi-certification.com/contact",
+
+        siteName: "QSI Certification",
+
+        locale: "id_ID",
+
+        type: "website",
+
+        images: [
+            {
+                url: "/og/contact-og.jpg",
+                width: 1200,
+                height: 630,
+                alt: "Contact QSI Certification",
+            },
+        ],
+    },
+
+    twitter: {
+        card: "summary_large_image",
+
+        title:
+            "Kontak QSI Certification",
+
+        description:
+            "Konsultasikan kebutuhan sertifikasi ISO perusahaan Anda bersama tim profesional QSI.",
+
+        images: ["/og/contact-og.jpg"],
+    },
+
+    alternates: {
+        canonical: "/contact",
+    },
+
+    robots: {
+        index: true,
+        follow: true,
+    },
+};
+
+export default function KontakPage() {
+    const t = pageHeroData.contact;
+
+    return (
+        <>
+            <ReusablePageHero
+                badge={t.badge}
+                title={t.title}
+                description={t.description}
+                image={t.image}
+                breadcrumbs={t.breadcrumbs}
+            />
+
+            <ContactSection />
+
+            <Maps />
+
+            <FaqContact />
+        </>
+    );
+}
