@@ -36,7 +36,7 @@ export const metadata: Metadata = {
         type: "website",
         images: [
             {
-                url: "/og/cek-sertifikat.jpg",
+                url: "/og-images.webp",
                 width: 1200,
                 height: 630,
                 alt: "Cek Sertifikat ISO Qualified Sertifikasi Indonesia",
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
             "Cek Sertifikat ISO Resmi | Qualified Sertifikasi Indonesia",
         description:
             "Verifikasi sertifikat ISO resmi secara online dengan sistem validasi Qualified Sertifikasi Indonesia.",
-        images: ["/og/cek-sertifikat.jpg"],
+        images: ["/og-images.webp"],
     },
 
     robots: {

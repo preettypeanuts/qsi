@@ -13,6 +13,7 @@ import { useMobileMenu } from "./useMobileMenu";
 import { ServiceMegaMenu } from "./ServiceMegaMenu";
 import { MobileMenu } from "./MobileMenu";
 import Image from "next/image";
+import { toWhatsApp } from "@/lib/actions";
 
 const navigation = [
     { label: "Beranda", href: "/" },
@@ -114,7 +115,9 @@ export const Navbar = () => {
 
                     {/* Right CTA */}
                     <div className="justify-self-end hidden items-center gap-3 lg:flex">
-                        <Button size="lg">Get Certified</Button>
+                        <Link href={toWhatsApp}>
+                            <Button size="lg">Get Certified</Button>
+                        </Link>
                     </div>
 
                     {/* Mobile Hamburger */}

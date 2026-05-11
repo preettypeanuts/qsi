@@ -1,20 +1,33 @@
 "use client";
 
 import { useState } from "react";
-import { Search, X, Shield, CheckCircle2, Calendar, Building2, Award, AlertCircle, Loader2 } from "lucide-react";
+import {
+    Search,
+    X,
+    Shield,
+    CheckCircle2,
+    Calendar,
+    Building2,
+    Award,
+    AlertCircle,
+    Loader2,
+} from "lucide-react";
 
 // Mock data sertifikat
-const mockCertificates: Record<string, {
-    number: string;
-    name: string;
-    standard: string;
-    company: string;
-    scope: string;
-    issuedDate: string;
-    expiryDate: string;
-    status: "active" | "expired" | "suspended";
-    auditor: string;
-}> = {
+const mockCertificates: Record<
+    string,
+    {
+        number: string;
+        name: string;
+        standard: string;
+        company: string;
+        scope: string;
+        issuedDate: string;
+        expiryDate: string;
+        status: "active" | "expired" | "suspended";
+        auditor: string;
+    }
+> = {
     "QSI-2024-001": {
         number: "QSI-2024-001",
         name: "ISO 9001:2015",
@@ -53,7 +66,6 @@ const mockCertificates: Record<string, {
 type Certificate = (typeof mockCertificates)[string];
 
 export const CekSertifikat = () => {
-
     const [query, setQuery] = useState("");
     const [result, setResult] = useState<Certificate | null>(null);
     const [notFound, setNotFound] = useState(false);
@@ -62,20 +74,22 @@ export const CekSertifikat = () => {
 
     const handleSearch = async () => {
         if (!query.trim()) return;
+
         setLoading(true);
         setNotFound(false);
         setResult(null);
 
-        // Simulate API delay
         await new Promise((r) => setTimeout(r, 900));
 
         const found = mockCertificates[query.trim().toUpperCase()];
+
         if (found) {
             setResult(found);
             setModalOpen(true);
         } else {
             setNotFound(true);
         }
+
         setLoading(false);
     };
 
@@ -110,28 +124,41 @@ export const CekSertifikat = () => {
         <div className="min-h-screen bg-lightColor">
 
             {/* HERO */}
-            <section className="bg-mainColor pt-40 pb-24 px-5">
-                <div className="max-w-2xl mx-auto text-center">
-                    <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-secondaryColor/30 bg-secondaryColor/10 mb-6">
+            <section className="bg-mainColor px-5 pb-24 pt-40">
+                <div className="mx-auto max-w-2xl text-center">
+
+                    {/* Badge */}
+                    <div className="animate-fade-up-in inline-flex items-center gap-2 rounded-full border border-secondaryColor/30 bg-secondaryColor/10 px-4 py-1.5 mb-6">
                         <Shield className="size-3.5 text-secondaryColor" />
-                        <span className="text-xs font-semibold tracking-widest uppercase text-secondaryColor">
+
+                        <span className="text-xs font-semibold uppercase tracking-widest text-secondaryColor">
                             Verifikasi Sertifikat
                         </span>
                     </div>
 
-                    <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-4">
-                        Cek Keaslian<br />
-                        <span className="text-secondaryColor">Sertifikat ISO</span>
+                    {/* Title */}
+                    <h1 className="animate-fade-up-in-200 mb-4 text-4xl font-bold leading-tight text-white md:text-5xl">
+                        Cek Keaslian
+                        <br />
+
+                        <span className="text-secondaryColor">
+                            Sertifikat ISO
+                        </span>
                     </h1>
 
-                    <p className="text-white/50 text-base leading-relaxed mb-10">
-                        Masukkan nomor sertifikat untuk memverifikasi keaslian dan status sertifikasi yang diterbitkan oleh Qualified Sertifikasi Indonesia.
+                    {/* Desc */}
+                    <p className="animate-fade-up-in-400 mb-10 text-base leading-relaxed text-white/50">
+                        Masukkan nomor sertifikat untuk memverifikasi
+                        keaslian dan status sertifikasi yang diterbitkan
+                        oleh Qualified Sertifikasi Indonesia.
                     </p>
 
-                    {/* Search Input */}
-                    <div className="relative flex items-center gap-2 bg-white rounded-2xl p-2 shadow-xl shadow-black/20">
-                        <div className="flex-1 flex items-center gap-3 px-3">
-                            <Search className="size-4 text-mainColor/30 shrink-0" />
+                    {/* Search */}
+                    <div className="animate-fade-up-in-400 relative flex items-center gap-2 rounded-2xl bg-white p-2 shadow-xl shadow-black/20">
+
+                        <div className="flex flex-1 items-center gap-3 px-3">
+                            <Search className="size-4 shrink-0 text-mainColor/30" />
+
                             <input
                                 suppressHydrationWarning
                                 type="text"
@@ -140,42 +167,67 @@ export const CekSertifikat = () => {
                                     setQuery(e.target.value);
                                     setNotFound(false);
                                 }}
-                                onKeyDown={(e) => e.key === "Enter" && handleSearch()}
+                                onKeyDown={(e) =>
+                                    e.key === "Enter" && handleSearch()
+                                }
                                 placeholder="Contoh: QSI-2024-001"
-                                className="w-full py-2.5 text-sm text-mainColor placeholder:text-mainColor/30 outline-none font-mono tracking-wide"
+                                className="w-full py-2.5 font-mono text-sm tracking-wide text-mainColor outline-none placeholder:text-mainColor/30"
                             />
+
                             {query && (
-                                <button onClick={() => { setQuery(""); setNotFound(false); setResult(null); }}>
-                                    <X className="size-4 text-mainColor/30 hover:text-mainColor transition-colors" />
+                                <button
+                                    onClick={() => {
+                                        setQuery("");
+                                        setNotFound(false);
+                                        setResult(null);
+                                    }}
+                                >
+                                    <X className="size-4 text-mainColor/30 transition-colors hover:text-mainColor" />
                                 </button>
                             )}
                         </div>
+
                         <button
                             onClick={handleSearch}
                             disabled={loading || !query.trim()}
-                            className="flex items-center gap-2 px-6 py-3 rounded-xl bg-mainColor text-white text-sm font-semibold hover:bg-mainColor/90 disabled:opacity-40 transition-all"
+                            className="flex items-center gap-2 rounded-xl bg-mainColor px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-mainColor/90 disabled:opacity-40"
                         >
-                            {loading ? <Loader2 className="size-4 animate-spin" /> : <Search className="size-4" />}
+                            {loading ? (
+                                <Loader2 className="size-4 animate-spin" />
+                            ) : (
+                                <Search className="size-4" />
+                            )}
+
                             {loading ? "Mencari..." : "Cari"}
                         </button>
                     </div>
 
                     {/* Not Found */}
                     {notFound && (
-                        <div className="mt-4 flex items-center justify-center gap-2 text-red-400 text-sm">
+                        <div className="animate-fade-up-in mt-4 flex items-center justify-center gap-2 text-sm text-red-400">
                             <AlertCircle className="size-4" />
-                            <span>Sertifikat tidak ditemukan. Periksa kembali nomor yang Anda masukkan.</span>
+
+                            <span>
+                                Sertifikat tidak ditemukan. Periksa kembali
+                                nomor yang Anda masukkan.
+                            </span>
                         </div>
                     )}
 
-                    {/* Example numbers */}
-                    <div className="mt-6 flex flex-wrap items-center justify-center gap-2">
-                        <span className="text-xs text-white/30">Coba:</span>
+                    {/* Example */}
+                    <div className="animate-fade-up-in-400 mt-6 flex flex-wrap items-center justify-center gap-2">
+                        <span className="text-xs text-white/30">
+                            Coba:
+                        </span>
+
                         {Object.keys(mockCertificates).map((key) => (
                             <button
                                 key={key}
-                                onClick={() => { setQuery(key); setNotFound(false); }}
-                                className="px-3 py-1 rounded-full text-xs font-mono bg-white/5 border border-white/10 text-white/50 hover:text-white hover:border-white/30 transition-all"
+                                onClick={() => {
+                                    setQuery(key);
+                                    setNotFound(false);
+                                }}
+                                className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-mono text-white/50 transition-all hover:border-white/30 hover:text-white"
                             >
                                 {key}
                             </button>
@@ -184,22 +236,45 @@ export const CekSertifikat = () => {
                 </div>
             </section>
 
-            {/* INFO SECTION */}
-            <section className="padding py-16 max-w-4xl mx-auto">
-                <div className="grid md:grid-cols-3 gap-4">
+            {/* INFO */}
+            <section className="padding mx-auto max-w-4xl py-16">
+                <div className="grid gap-4 md:grid-cols-3">
+
                     {[
-                        { icon: Shield, title: "Terverifikasi Resmi", desc: "Semua sertifikat diterbitkan sesuai standar internasional yang diakui global." },
-                        { icon: CheckCircle2, title: "Status Real-time", desc: "Informasi status sertifikat diperbarui secara langsung dari database kami." },
-                        { icon: Award, title: "Akreditasi KAN", desc: "Qualified Sertifikasi Indonesia diakreditasi oleh Komite Akreditasi Nasional (KAN)." },
+                        {
+                            icon: Shield,
+                            title: "Terverifikasi Resmi",
+                            desc: "Semua sertifikat diterbitkan sesuai standar internasional yang diakui global.",
+                        },
+                        {
+                            icon: CheckCircle2,
+                            title: "Status Real-time",
+                            desc: "Informasi status sertifikat diperbarui secara langsung dari database kami.",
+                        },
+                        {
+                            icon: Award,
+                            title: "Akreditasi KAN",
+                            desc: "Qualified Sertifikasi Indonesia diakreditasi oleh Komite Akreditasi Nasional (KAN).",
+                        },
                     ].map((item, i) => {
                         const Icon = item.icon;
+
                         return (
-                            <div key={i} className="bg-white rounded-2xl border border-border p-6 shadow-sm flex flex-col gap-3">
-                                <div className="size-10 flex items-center justify-center rounded-xl bg-otherColor text-secondaryColor">
+                            <div
+                                key={i}
+                                className={`animate-fade-up-in-${i * 200} flex flex-col gap-3 rounded-2xl border border-border bg-white p-6 shadow-sm`}
+                            >
+                                <div className="flex size-10 items-center justify-center rounded-xl bg-otherColor text-secondaryColor">
                                     <Icon className="size-5" />
                                 </div>
-                                <p className="font-semibold text-mainColor">{item.title}</p>
-                                <p className="text-sm text-mainColor/50 leading-relaxed">{item.desc}</p>
+
+                                <p className="font-semibold text-mainColor">
+                                    {item.title}
+                                </p>
+
+                                <p className="text-sm leading-relaxed text-mainColor/50">
+                                    {item.desc}
+                                </p>
                             </div>
                         );
                     })}
@@ -210,75 +285,139 @@ export const CekSertifikat = () => {
             {modalOpen && result && (() => {
                 const cfg = statusConfig[result.status];
                 const StatusIcon = cfg.icon;
+
                 return (
                     <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+
                         {/* Backdrop */}
                         <div
-                            className="absolute inset-0 bg-black/50 backdrop-blur-sm"
+                            className="absolute inset-0 bg-black/50 backdrop-blur-sm animate-fade-up-in"
                             onClick={() => setModalOpen(false)}
                         />
 
                         {/* Modal */}
-                        <div className="relative w-full max-w-lg bg-white rounded-3xl shadow-2xl overflow-hidden">
+                        <div className="animate-fade-up-in relative w-full max-w-lg overflow-hidden rounded-3xl bg-white shadow-2xl">
 
                             {/* Header */}
-                            <div className="bg-mainColor px-6 pt-8 pb-6 relative overflow-hidden">
-                                {/* decorative */}
-                                <div className="absolute -top-6 -right-6 size-32 rounded-full bg-secondaryColor/10" />
-                                <div className="absolute top-4 right-16 size-16 rounded-full bg-white/5" />
+                            <div className="relative overflow-hidden bg-mainColor px-6 pb-6 pt-8">
+
+                                <div className="absolute -right-6 -top-6 size-32 rounded-full bg-secondaryColor/10" />
+                                <div className="absolute right-16 top-4 size-16 rounded-full bg-white/5" />
 
                                 <button
                                     onClick={() => setModalOpen(false)}
-                                    className="absolute top-4 right-4 flex size-8 items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20 transition"
+                                    className="absolute right-4 top-4 flex size-8 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-white/20"
                                 >
                                     <X className="size-4" />
                                 </button>
 
-                                <div className="flex items-start gap-4 relative z-10">
-                                    <div className="size-12 flex items-center justify-center rounded-2xl bg-secondaryColor/20 border border-secondaryColor/30 text-secondaryColor shrink-0">
+                                <div className="relative z-10 flex items-start gap-4">
+
+                                    <div className="flex size-12 shrink-0 items-center justify-center rounded-2xl border border-secondaryColor/30 bg-secondaryColor/20 text-secondaryColor">
                                         <Award className="size-6" />
                                     </div>
+
                                     <div>
-                                        <p className="text-white/50 text-xs font-mono mb-1">{result.number}</p>
-                                        <h2 className="text-xl font-bold text-white leading-tight">{result.name}</h2>
-                                        <p className="text-white/60 text-sm">{result.standard}</p>
+                                        <p className="mb-1 text-xs font-mono text-white/50">
+                                            {result.number}
+                                        </p>
+
+                                        <h2 className="text-xl font-bold leading-tight text-white">
+                                            {result.name}
+                                        </h2>
+
+                                        <p className="text-sm text-white/60">
+                                            {result.standard}
+                                        </p>
                                     </div>
                                 </div>
 
-                                {/* Status badge */}
-                                <div className={`mt-5 inline-flex items-center gap-2 px-3 py-1.5 rounded-full border ${cfg.bg} ${cfg.border} relative z-10`}>
-                                    <div className={`size-1.5 rounded-full ${cfg.dot} ${result.status === "active" ? "animate-pulse" : ""}`} />
-                                    <span className={`text-xs font-semibold ${cfg.text}`}>{cfg.label}</span>
+                                <div
+                                    className={`relative z-10 mt-5 inline-flex items-center gap-2 rounded-full border px-3 py-1.5 ${cfg.bg} ${cfg.border}`}
+                                >
+                                    <div
+                                        className={`size-1.5 rounded-full ${cfg.dot} ${
+                                            result.status === "active"
+                                                ? "animate-pulse"
+                                                : ""
+                                        }`}
+                                    />
+
+                                    <span
+                                        className={`text-xs font-semibold ${cfg.text}`}
+                                    >
+                                        {cfg.label}
+                                    </span>
                                 </div>
                             </div>
 
                             {/* Body */}
-                            <div className="p-6 space-y-4">
+                            <div className="space-y-4 p-6">
+
                                 <div className="grid grid-cols-1 gap-3">
+
                                     {[
-                                        { icon: Building2, label: "Perusahaan", value: result.company },
-                                        { icon: Shield, label: "Ruang Lingkup", value: result.scope },
-                                        { icon: Calendar, label: "Tanggal Terbit", value: result.issuedDate },
-                                        { icon: Calendar, label: "Berlaku Hingga", value: result.expiryDate },
-                                        { icon: Award, label: "Auditor", value: result.auditor },
+                                        {
+                                            icon: Building2,
+                                            label: "Perusahaan",
+                                            value: result.company,
+                                        },
+                                        {
+                                            icon: Shield,
+                                            label: "Ruang Lingkup",
+                                            value: result.scope,
+                                        },
+                                        {
+                                            icon: Calendar,
+                                            label: "Tanggal Terbit",
+                                            value: result.issuedDate,
+                                        },
+                                        {
+                                            icon: Calendar,
+                                            label: "Berlaku Hingga",
+                                            value: result.expiryDate,
+                                        },
+                                        {
+                                            icon: Award,
+                                            label: "Auditor",
+                                            value: result.auditor,
+                                        },
                                     ].map((row, i) => {
                                         const RowIcon = row.icon;
+
                                         return (
-                                            <div key={i} className="flex items-start gap-3 p-3 rounded-xl bg-lightColor border border-border">
-                                                <div className="size-7 flex items-center justify-center rounded-lg bg-otherColor text-secondaryColor shrink-0 mt-0.5">
+                                            <div
+                                                key={i}
+                                                className={`animate-fade-up-in-${
+                                                    i * 200
+                                                } flex items-start gap-3 rounded-xl border border-border bg-lightColor p-3`}
+                                            >
+                                                <div className="mt-0.5 flex size-7 shrink-0 items-center justify-center rounded-lg bg-otherColor text-secondaryColor">
                                                     <RowIcon className="size-3.5" />
                                                 </div>
+
                                                 <div>
-                                                    <p className="text-xs text-mainColor/40 mb-0.5">{row.label}</p>
-                                                    <p className="text-sm font-medium text-mainColor">{row.value}</p>
+                                                    <p className="mb-0.5 text-xs text-mainColor/40">
+                                                        {row.label}
+                                                    </p>
+
+                                                    <p className="text-sm font-medium text-mainColor">
+                                                        {row.value}
+                                                    </p>
                                                 </div>
                                             </div>
                                         );
                                     })}
                                 </div>
 
-                                <p className="text-xs text-mainColor/30 text-center pt-2">
-                                    Data diverifikasi dari sistem Qualified Sertifikasi Indonesia · {new Date().toLocaleDateString("id-ID", { day: "numeric", month: "long", year: "numeric" })}
+                                <p className="pt-2 text-center text-xs text-mainColor/30">
+                                    Data diverifikasi dari sistem Qualified
+                                    Sertifikasi Indonesia ·{" "}
+                                    {new Date().toLocaleDateString("id-ID", {
+                                        day: "numeric",
+                                        month: "long",
+                                        year: "numeric",
+                                    })}
                                 </p>
                             </div>
                         </div>
@@ -287,4 +426,4 @@ export const CekSertifikat = () => {
             })()}
         </div>
     );
-}
+};

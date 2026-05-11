@@ -8,9 +8,13 @@ import {
 import { commonData } from "@/data/common";
 import { Button } from "../ui/button";
 import Image from "next/image";
+import { toWhatsApp } from "@/lib/actions";
+import { contactPageData } from "@/data/contact-data";
 
 export const Footer = () => {
     const t = commonData.footer;
+    const c = contactPageData.contactInfo.items;
+
 
     return (
         <footer className="pt-0">
@@ -30,15 +34,17 @@ export const Footer = () => {
                             </h2>
                         </div>
 
-                        <Button
-                            size={"lg"}
-                            variant={"second"}
-                            className="group"
-                        >
-                            {t.cta.button}
+                        <a href={toWhatsApp}>
+                            <Button
+                                size={"lg"}
+                                variant={"second"}
+                                className="group"
+                            >
+                                {t.cta.button}
 
-                            <ArrowUpRight className="ml-2 size-4 transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1" />
-                        </Button>
+                                <ArrowUpRight className="ml-2 size-4 transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1" />
+                            </Button>
+                        </a>
                     </div>
                 </div>
 
@@ -118,7 +124,7 @@ export const Footer = () => {
                         </h4>
 
                         <div className="mt-6 flex flex-col gap-5">
-                            {t.contact.map((item, index) => {
+                            {c.map((item, index) => {
                                 const Icon = item.icon;
 
                                 return (
@@ -127,17 +133,17 @@ export const Footer = () => {
                                         href={item.href}
                                         className="group flex items-start gap-4"
                                     >
-                                        <div className="flex size-11 items-center justify-center rounded-xl bg-white/5 text-secondaryColor transition-colors duration-300 group-hover:bg-secondaryColor/10">
+                                        <div className="flex size-11 min-w-11 items-center justify-center rounded-xl bg-white/5 text-secondaryColor transition-colors duration-300 group-hover:bg-secondaryColor/10">
                                             <Icon className="size-5" />
                                         </div>
 
                                         <div>
                                             <p className="text-sm text-lightColor/50">
-                                                {item.label}
+                                                {item.title}
                                             </p>
 
-                                            <p className="mt-1 text-sm text-lightColor/80 transition-colors duration-300 group-hover:text-secondaryColor">
-                                                {item.value}
+                                            <p className="mt-1 text-sm text-lightColor/80 transition-colors duration-300 group-hover:text-secondaryColor line-clamp-2">
+                                                {item.content}
                                             </p>
                                         </div>
                                     </Link>

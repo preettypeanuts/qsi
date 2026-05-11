@@ -5,6 +5,7 @@ import { ReusablePageHero } from "@/components/page-hero";
 import { ServicesGrid } from "@/components/service-grid";
 
 import { pageHeroData } from "@/data/page-hero-data";
+import { Reveal } from "@/components/animate-reveal";
 
 export const metadata: Metadata = {
     title:
@@ -47,7 +48,7 @@ export const metadata: Metadata = {
 
         images: [
             {
-                url: "/og/services-og.jpg",
+                url: "/og-images.webp",
                 width: 1200,
                 height: 630,
                 alt: "Qualified Sertifikasi Indonesia Services",
@@ -64,7 +65,7 @@ export const metadata: Metadata = {
         description:
             "Jelajahi layanan sertifikasi ISO internasional untuk berbagai kebutuhan industri modern.",
 
-        images: ["/og/services-og.jpg"],
+        images: ["/og-images.webp"],
     },
 
     alternates: {
@@ -89,10 +90,13 @@ export default function LayananPage() {
                 image={t.image}
                 breadcrumbs={t.breadcrumbs}
             />
-
-            <ServicesGrid />
-
-            <FaqService />
+            <Reveal variant="fade-up" delay={200}>
+                <ServicesGrid />
+            </Reveal>
+            
+            <Reveal variant="fade-up" delay={200}>
+                <FaqService />
+            </Reveal>
         </>
     );
 }

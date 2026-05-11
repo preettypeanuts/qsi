@@ -7,6 +7,7 @@ import { ReusablePageHero } from "@/components/page-hero";
 import { VisionMission } from "@/components/visi-misi";
 
 import { pageHeroData } from "@/data/page-hero-data";
+import { Reveal } from "@/components/animate-reveal";
 
 export const metadata: Metadata = {
     title:
@@ -43,7 +44,7 @@ export const metadata: Metadata = {
 
         images: [
             {
-                url: "/og/about-og.jpg",
+                url: "/og-images.webp",
                 width: 1200,
                 height: 630,
                 alt: "About Qualified Sertifikasi Indonesia",
@@ -60,7 +61,7 @@ export const metadata: Metadata = {
         description:
             "Kenali visi, misi, nilai perusahaan, dan komitmen QSI dalam menyediakan layanan sertifikasi ISO profesional.",
 
-        images: ["/og/about-og.jpg"],
+        images: ["/og-images.webp"],
     },
 
     alternates: {
@@ -85,14 +86,18 @@ export default function AboutUsPage() {
                 image={t.image}
                 breadcrumbs={t.breadcrumbs}
             />
-
-            <CompanyStory />
-
-            <VisionMission />
-
-            <CoreValues />
-
-            <CTA />
+            <Reveal variant="fade-up" delay={200}>
+                <CompanyStory />
+            </Reveal>
+            <Reveal variant="fade-up" delay={200}>
+                <VisionMission />
+            </Reveal>
+            <Reveal variant="fade-up" delay={200}>
+                <CoreValues />
+            </Reveal>
+            <Reveal variant="fade-up" delay={200}>
+                <CTA />
+            </Reveal>
         </>
     );
 }

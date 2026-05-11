@@ -2,9 +2,14 @@ import { ArrowUpRight, PhoneCall } from "lucide-react";
 
 import { homePageData } from "@/data/home-data";
 import { Button } from "./ui/button";
+import { toWhatsApp } from "@/lib/actions";
+import Link from "next/link";
+import { contactPageData } from "@/data/contact-data";
 
 export const CTA = () => {
     const t = homePageData.finalCTA;
+    const c = contactPageData.contactInfo.items;
+
 
     return (
         <section className="spacing margin">
@@ -36,38 +41,45 @@ export const CTA = () => {
                     {/* Actions */}
                     <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
 
-                        <Button
-                            size={"lg"}
-                            variant={"second"}
-                            className="group"
-                        >
-                            {t.cta.primary}
+                        <Link href="/kontak">
+                            <Button
+                                size={"lg"}
+                                variant={"second"}
+                                className="group"
+                            >
+                                {t.cta.primary}
 
-                            <ArrowUpRight className="ml-2 size-4 transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1" />
-                        </Button>
+                                <ArrowUpRight className="ml-2 size-4 transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1" />
+                            </Button>
+                        </Link>
 
-                        <Button
-                            size={"lg"}
-                            variant={"outline"}
-                            className="border-white/15 bg-white/5 text-lightColor backdrop-blur-xl hover:bg-white hover:text-mainColor"
-                        >
-                            <PhoneCall className="mr-2 size-4" />
+                        <Link href={toWhatsApp}>
+                            <Button
+                                size={"lg"}
+                                variant={"outline"}
+                                className="border-white/15 bg-white/5 text-lightColor backdrop-blur-xl hover:bg-white hover:text-mainColor"
+                            >
+                                <PhoneCall className="mr-2 size-4" />
 
-                            {t.cta.secondary}
-                        </Button>
+                                {t.cta.secondary}
+                            </Button>
+                        </Link>
                     </div>
 
                     {/* Shortcut Contact */}
                     <div className="mt-12 flex flex-wrap items-center justify-center gap-4 text-sm text-lightColor/60">
-                        <span>info@qsi-certification.com</span>
 
-                        <div className="size-1 rounded-full bg-white/20" />
+                        {c.slice(1, 4).map((el, id) => (
 
-                        <span>+62 812 0000 0000</span>
+                            <Link
+                                key={id}
+                                className="px-2 py-1 bg-white/5 rounded-full border border-border/10"
+                                href={el.href}
+                            >
+                                {el.content}
+                            </Link>
+                        ))}
 
-                        <div className="size-1 rounded-full bg-white/20" />
-
-                        <span>Jakarta, Indonesia</span>
                     </div>
                 </div>
             </div>

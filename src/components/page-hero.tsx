@@ -4,13 +4,12 @@ import Image from "next/image";
 import Link from "next/link";
 
 import {
-    ArrowDown,
     ArrowUpRight,
     ChevronRight,
-    Play,
 } from "lucide-react";
 
 import { Button } from "./ui/button";
+import { toWhatsApp } from "@/lib/actions";
 
 interface BreadcrumbItem {
     label: string;
@@ -33,9 +32,9 @@ export const ReusablePageHero = ({
     breadcrumbs,
 }: ReusablePageHeroProps) => {
     return (
-        <section className="">
-            <div className="">
-                <div className="relative overflow-hidden min-h-[92vh] bg-mainColor text-lightColor">
+        <section>
+            <div>
+                <div className="relative min-h-[92vh] overflow-hidden bg-mainColor text-lightColor">
 
                     {/* Background Image */}
                     <Image
@@ -43,14 +42,14 @@ export const ReusablePageHero = ({
                         alt={title}
                         fill
                         priority
-                        className="object-cover"
+                        className="animate-fade-up-in object-cover"
                     />
 
                     {/* Main Overlay */}
                     <div className="absolute inset-0 bg-black/40" />
 
                     {/* Left Gradient */}
-                    <div className="absolute inset-y-0 left-0 w-full md:w-[65%] bg-linear-to-r from-mainColor via-mainColor/85 to-transparent" />
+                    <div className="absolute inset-y-0 left-0 w-full bg-linear-to-r from-mainColor via-mainColor/85 to-transparent md:w-[65%]" />
 
                     {/* Blur Layer */}
                     <div className="absolute inset-y-0 left-0 w-[45%] backdrop-blur-[6px]" />
@@ -65,7 +64,7 @@ export const ReusablePageHero = ({
                         <div className="padding pt-30">
 
                             {/* Breadcrumb */}
-                            <div className="mb-5 flex flex-wrap items-center gap-2 text-sm text-lightColor/40">
+                            <div className="animate-fade-up-in mb-5 flex flex-wrap items-center gap-2 text-sm text-lightColor/40">
                                 {breadcrumbs.map((item, index) => (
                                     <div
                                         key={index}
@@ -78,16 +77,15 @@ export const ReusablePageHero = ({
                                             {item.label}
                                         </Link>
 
-                                        {index !==
-                                            breadcrumbs.length - 1 && (
-                                                <ChevronRight className="size-4" />
-                                            )}
+                                        {index !== breadcrumbs.length - 1 && (
+                                            <ChevronRight className="size-4" />
+                                        )}
                                     </div>
                                 ))}
                             </div>
 
                             {/* Badge */}
-                            <div className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/10 px-5 py-2 backdrop-blur-xl mb-3">
+                            <div className="animate-fade-up-in-200 mb-3 inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/10 px-5 py-2 backdrop-blur-xl">
                                 <div className="size-2 rounded-full bg-secondaryColor" />
 
                                 <span className="text-xs font-semibold uppercase tracking-[0.25em] text-secondaryColor">
@@ -102,17 +100,17 @@ export const ReusablePageHero = ({
                             <div className="max-w-3xl">
 
                                 {/* Title */}
-                                <h1 className="text-5xl font-bold leading-[0.95] tracking-[-0.04em] text-white md:text-7xl">
+                                <h1 className="animate-fade-up-in-200 text-5xl font-bold leading-[0.95] tracking-[-0.04em] text-white md:text-7xl">
                                     {title}
                                 </h1>
 
                                 {/* Desc */}
-                                <p className="mt-8 max-w-2xl text-base leading-relaxed text-lightColor/65 md:text-xl">
+                                <p className="animate-fade-up-in-400 mt-8 max-w-2xl text-base leading-relaxed text-lightColor/65 md:text-xl">
                                     {description}
                                 </p>
 
                                 {/* CTA */}
-                                <div className="mt-10 flex flex-wrap items-center gap-4">
+                                <div className="animate-fade-up-in-400 mt-10 flex flex-wrap items-center gap-4">
 
                                     <Button
                                         size={"lg"}
@@ -121,7 +119,7 @@ export const ReusablePageHero = ({
                                         asChild
                                     >
                                         <Link
-                                            href="https://wa.me/6281200000000"
+                                            href={toWhatsApp}
                                             target="_blank"
                                         >
                                             Free Consultation
@@ -145,12 +143,9 @@ export const ReusablePageHero = ({
                                     </Button>
                                 </div>
 
-
                             </div>
                         </div>
                     </div>
-
-
                 </div>
             </div>
         </section>

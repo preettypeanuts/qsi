@@ -38,7 +38,7 @@ export const Maps = () => {
                         {/* Maps */}
                         <div className="relative h-125 w-full overflow-hidden">
                             <iframe
-                                src="https://maps.google.com/maps?q=Ad%20Premier%20Office%20Park%20Jakarta&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.7519321606824!2d106.82335207499099!3d-6.296295093692803!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3b69208f7bd%3A0x13f7eb9520cd483e!2sAD%20Premier!5e0!3m2!1sid!2sid!4v1778490162019!5m2!1sid!2sid"
                                 width="100%"
                                 height="100%"
                                 loading="lazy"
@@ -55,3 +55,4 @@ export const Maps = () => {
         </>
     );
 };
+

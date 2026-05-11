@@ -23,59 +23,56 @@ export const commonData = {
 
         navigation: [
             {
-                label: "Home",
+                label: "Beranda",
                 href: "/",
             },
             {
-                label: "About",
-                href: "/about",
+                label: "Tentang Kami",
+                href: "/tentang-kami",
             },
             {
-                label: "Services",
-                href: "/services",
+                label: "Layanan",
+                href: "/Layanan",
             },
             {
-                label: "Industries",
-                href: "/industries",
+                label: "Cek Sertifikat",
+                href: "/cek-sertifikat"
             },
+
             {
-                label: "Process",
-                href: "/process",
-            },
-            {
-                label: "Blog",
-                href: "/blog",
-            },
-            {
-                label: "Contact",
-                href: "/contact",
+                label: "Kontak",
+                href: "/kontak",
             },
         ],
 
         services: [
             {
                 label: "ISO 9001",
-                href: "/services/iso-9001",
+                href: "/layanan/iso-9001",
             },
             {
                 label: "ISO 14001",
-                href: "/services/iso-14001",
+                href: "/layanan/iso-14001",
             },
             {
                 label: "ISO 45001",
-                href: "/services/iso-45001",
+                href: "/layanan/iso-45001",
             },
             {
                 label: "ISO 22000",
-                href: "/services/iso-22000",
+                href: "/layanan/iso-22000",
             },
             {
                 label: "ISO 27001",
-                href: "/services/iso-27001",
+                href: "/layanan/iso-27001",
             },
             {
                 label: "HACCP",
-                href: "/services/haccp",
+                href: "/layanan/haccp",
+            },
+              {
+                label: "Cek Semua Layanan",
+                href: "/layanan",
             },
         ],
 

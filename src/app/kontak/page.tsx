@@ -6,6 +6,7 @@ import { Maps } from "@/components/maps";
 import { ReusablePageHero } from "@/components/page-hero";
 
 import { pageHeroData } from "@/data/page-hero-data";
+import { Reveal } from "@/components/animate-reveal";
 
 export const metadata: Metadata = {
     title:
@@ -44,7 +45,7 @@ export const metadata: Metadata = {
 
         images: [
             {
-                url: "/og/contact-og.jpg",
+                url: "/og-images.webp",
                 width: 1200,
                 height: 630,
                 alt: "Contact Qualified Sertifikasi Indonesia",
@@ -61,7 +62,7 @@ export const metadata: Metadata = {
         description:
             "Konsultasikan kebutuhan sertifikasi ISO perusahaan Anda bersama tim profesional QSI.",
 
-        images: ["/og/contact-og.jpg"],
+        images: ["/og-images.webp"],
     },
 
     alternates: {
@@ -86,12 +87,15 @@ export default function KontakPage() {
                 image={t.image}
                 breadcrumbs={t.breadcrumbs}
             />
-
-            <ContactSection />
-
-            <Maps />
-
-            <FaqContact />
+            <Reveal variant="fade-up" delay={200}>
+                <ContactSection />
+            </Reveal>
+            <Reveal variant="fade-up" delay={200}>
+                <Maps />
+            </Reveal>
+            <Reveal variant="fade-up" delay={200}>
+                <FaqContact />
+            </Reveal>
         </>
     );
 }

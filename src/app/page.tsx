@@ -6,6 +6,7 @@ import { HeroHome } from "@/components/hero-home";
 import { ServicesPreview } from "@/components/service-preview";
 import { ShortAbout } from "@/components/short-about";
 import { WhyUs } from "@/components/why-us";
+import { Reveal } from "@/components/animate-reveal";
 
 export const metadata: Metadata = {
   title:
@@ -43,7 +44,7 @@ export const metadata: Metadata = {
 
     images: [
       {
-        url: "/og/home-og.jpg",
+        url: "/og-images.webp",
         width: 1200,
         height: 630,
         alt: "Qualified Sertifikasi Indonesia Homepage",
@@ -60,7 +61,7 @@ export const metadata: Metadata = {
     description:
       "Professional ISO certification services trusted by modern businesses in Indonesia.",
 
-    images: ["/og/home-og.jpg"],
+    images: ["/og-images.webp"],
   },
 
   alternates: {
@@ -72,11 +73,26 @@ export default function Home() {
   return (
     <>
       <HeroHome />
-      <ShortAbout />
-      <WhyUs />
-      <ServicesPreview />
-      <CertificationProcess />
-      <CTA />
+      
+      <Reveal variant="fade-up" delay={200}>
+        <ShortAbout />
+      </Reveal>
+
+      <Reveal variant="fade-up" delay={200}>
+        <WhyUs />
+      </Reveal>
+
+      <Reveal variant="fade-up" delay={200}>
+        <ServicesPreview />
+      </Reveal>
+
+      <Reveal variant="fade-up" delay={200}>
+        <CertificationProcess />
+      </Reveal>
+
+      <Reveal variant="fade-up" delay={200}>
+        <CTA />
+      </Reveal>
     </>
   );
 }

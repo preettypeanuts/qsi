@@ -8,7 +8,7 @@ export const WhyUs = () => {
 
     return (
         <section className="spacing bg-white">
-            <div className="padding overflow-hidden rounded-main">
+            <div className="padding rounded-main">
 
                 {/* Top Section */}
                 <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">

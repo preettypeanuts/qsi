@@ -12,6 +12,7 @@ import {
 import { servicesData } from "@/data/service-data";
 
 import { Button } from "./ui/button";
+import { toWhatsApp } from "@/lib/actions";
 
 export const ServicesPreview = () => {
     const [showAll, setShowAll] = useState(false);
@@ -243,7 +244,7 @@ export const ServicesPreview = () => {
                                     asChild
                                 >
                                     <Link
-                                        href="https://wa.me/6281234567890"
+                                        href={toWhatsApp}
                                         target="_blank"
                                     >
                                         Start Consultation

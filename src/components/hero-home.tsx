@@ -1,6 +1,8 @@
 import Image from "next/image";
 import { homePageData } from "@/data/home-data";
 import { Button } from "./ui/button";
+import { toWhatsApp } from "@/lib/actions";
+import Link from "next/link";
 
 export const HeroHome = () => {
     const t = homePageData.heroSection;
@@ -14,38 +16,45 @@ export const HeroHome = () => {
 
                     {/* Top Content */}
                     <div className="space-y-8">
+
                         {/* Heading */}
                         <div className="space-y-6">
-                            <h1 className="max-w-2xl text-3xl font-bold leading-[1.1] tracking-tight text-foreground lg:text-6xl">
+
+                            <h1 className="animate-fade-up-in max-w-2xl text-3xl font-bold leading-[1.1] tracking-tight text-foreground lg:text-6xl">
                                 {t.headline}
                             </h1>
-                            <div className="flex flex-wrap gap-4">
-                                <Button
-                                    variant={"primary"}
-                                    size={"xl"}
-                                >
-                                    {t.cta.primary}
-                                </Button>
 
-                                <Button
-                                    variant={"outlineSecondary"}
-                                    size={"xl"}
-                                >
-                                    {t.cta.secondary}
-                                </Button>
+                            <div className="animate-fade-up-in-200 flex flex-wrap gap-4">
+                                <Link href={toWhatsApp}>
+                                    <Button
+                                        variant={"primary"}
+                                        size={"xl"}
+                                    >
+                                        {t.cta.primary}
+                                    </Button>
+                                </Link>
+                                
+                                <Link href="/layanan">
+                                    <Button
+                                        variant={"outlineSecondary"}
+                                        size={"xl"}
+                                    >
+                                        {t.cta.secondary}
+                                    </Button>
+                                </Link>
                             </div>
 
                         </div>
                     </div>
 
-                    <p className="max-w-xl text-lg leading-relaxed text-muted-foreground">
+                    <p className="animate-fade-up-in-400 max-w-xl text-lg leading-relaxed text-muted-foreground">
                         {t.description}
                     </p>
 
                 </div>
 
                 {/* Right Content */}
-                <div className="relative h-full overflow-hidden rounded-main">
+                <div className="animate-fade-up-in-200 relative h-full overflow-hidden rounded-main">
                     <Image
                         src={t.img}
                         alt="Professional ISO certification audit meeting"
@@ -58,7 +67,7 @@ export const HeroHome = () => {
                     <div className="absolute inset-0 bg-black/10" />
 
                     {/* Floating Card */}
-                    <div className="absolute bottom-6 right-6 hidden max-w-64 rounded-3xl border border-white/20 bg-white/10 p-6 backdrop-blur-xl lg:block">
+                    <div className="animate-fade-up-in-400 absolute bottom-6 right-6 hidden max-w-64 rounded-3xl border border-white/20 bg-white/10 p-6 backdrop-blur-xl lg:block">
                         <div className="text-5xl font-bold text-white">
                             {t.card.primer}
                         </div>

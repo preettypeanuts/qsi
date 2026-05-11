@@ -49,6 +49,7 @@ export const contactPageData = {
                     "Jl. TB Simatupang No. 5, 5rd Floor",
                     "DKI Jakarta",
                 ],
+                href: "https://maps.app.goo.gl/rxYzkik1EUm7TZy87",
             },
 
             {
