@@ -59,11 +59,11 @@ export const FaqContact = () => {
                                                     : index
                                             )
                                         }
-                                        className="flex w-full items-center justify-between gap-5 p-6 md:p-8"
+                                        className="flex w-full items-center justify-between gap-5 p-6 md:px-3 md:py-2"
                                     >
 
                                         <h3
-                                            className={`text-left text-lg font-semibold md:text-2xl ${isActive
+                                            className={`text-left text-lg font-semibold md:text-lg ml-2 ${isActive
                                                 ? "text-white"
                                                 : "text-foreground"
                                                 }`}

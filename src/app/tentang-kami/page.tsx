@@ -10,14 +10,14 @@ import { pageHeroData } from "@/data/page-hero-data";
 
 export const metadata: Metadata = {
     title:
-        "Tentang QSI Certification",
+        "Tentang Qualified Sertifikasi Indonesia",
 
     description:
-        "Pelajari lebih lanjut tentang QSI Certification sebagai lembaga sertifikasi ISO profesional di Indonesia dengan komitmen terhadap kualitas, integritas, dan layanan sertifikasi terpercaya.",
+        "Pelajari lebih lanjut tentang Qualified Sertifikasi Indonesia sebagai lembaga sertifikasi ISO profesional di Indonesia dengan komitmen terhadap kualitas, integritas, dan layanan sertifikasi terpercaya.",
 
     keywords: [
         "Tentang QSI",
-        "QSI Certification",
+        "Qualified Sertifikasi Indonesia",
         "Lembaga Sertifikasi ISO",
         "Sertifikasi ISO Indonesia",
         "Audit ISO",
@@ -28,14 +28,14 @@ export const metadata: Metadata = {
 
     openGraph: {
         title:
-            "Tentang QSI Certification | Professional ISO Certification Body",
+            "Tentang Qualified Sertifikasi Indonesia | Professional ISO Certification Body",
 
         description:
             "QSI hadir sebagai lembaga sertifikasi profesional yang membantu berbagai industri mencapai standar internasional secara terpercaya dan independen.",
 
         url: "https://qsi-certification.com/about",
 
-        siteName: "QSI Certification",
+        siteName: "Qualified Sertifikasi Indonesia",
 
         locale: "id_ID",
 
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
                 url: "/og/about-og.jpg",
                 width: 1200,
                 height: 630,
-                alt: "About QSI Certification",
+                alt: "About Qualified Sertifikasi Indonesia",
             },
         ],
     },
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
         card: "summary_large_image",
 
         title:
-            "Tentang QSI Certification",
+            "Tentang Qualified Sertifikasi Indonesia",
 
         description:
             "Kenali visi, misi, nilai perusahaan, dan komitmen QSI dalam menyediakan layanan sertifikasi ISO profesional.",

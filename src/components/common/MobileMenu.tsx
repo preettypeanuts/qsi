@@ -7,6 +7,7 @@ import { servicesData } from "@/data/service-data";
 
 const navigation = [
     { label: "Beranda", href: "/" },
+    { label: "Semua Layanan", href: "/layanan" },
     { label: "Tentang Kami", href: "/tentang-kami" },
     { label: "Cek Sertifikat", href: "/cek-sertifikat" },
     { label: "Kontak", href: "/kontak" },
@@ -29,7 +30,7 @@ export const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
                         Q
                     </div>
                     <div>
-                        <h2 className="text-base font-bold tracking-tight text-foreground">QSI Certification</h2>
+                        <h2 className="text-base font-bold tracking-tight text-foreground">Qualified Sertifikasi Indonesia</h2>
                         <p className="text-xs text-muted-foreground">Professional ISO Services</p>
                     </div>
                 </div>

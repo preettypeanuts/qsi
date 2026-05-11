@@ -4,12 +4,15 @@ import Link from "next/link";
 import { useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { ChevronDown, Menu } from "lucide-react";
+
 import { Button } from "../ui/button";
 import { useNavbarScroll } from "./useNavbarScroll";
 import { useMegaMenu } from "./useMegaMenu";
 import { useMobileMenu } from "./useMobileMenu";
+
 import { ServiceMegaMenu } from "./ServiceMegaMenu";
 import { MobileMenu } from "./MobileMenu";
+import Image from "next/image";
 
 const navigation = [
     { label: "Beranda", href: "/" },
@@ -24,11 +27,29 @@ export const Navbar = () => {
     const { isOpen, toggle, close } = useMobileMenu();
     const pathname = usePathname();
 
-    // Tutup semua menu saat pindah halaman
     useEffect(() => {
         forceClose();
         close();
     }, [pathname]);
+
+    const NavLink = ({ href, label }: { href: string; label: string }) => {
+        const isActive = pathname === href;
+        return (
+            <Link href={href} className="group relative flex flex-col items-center">
+                <span className={`text-sm font-medium transition-colors duration-300 truncate
+                    ${isActive ? "text-secondaryColor font-bold!" : "text-foreground hover:text-mainColor"}`}>
+                    {label}
+                </span>
+                <div className={`absolute -bottom-1 h-0.75 rounded-full transition-all duration-300
+                    ${isActive
+                        ? "w-6 opacity-100 bg-secondaryColor"
+                        : "w-0 opacity-0 group-hover:w-full group-hover:opacity-100 bg-mainColor"}`}
+                />
+            </Link>
+        );
+    };
+
+    const isLayananActive = pathname.startsWith("/layanan");
 
     return (
         <>
@@ -36,61 +57,68 @@ export const Navbar = () => {
             {(activeMega || isOpen) && (
                 <div
                     onClick={() => { forceClose(); close(); }}
-                    className="fixed inset-0 bg-black/20 backdrop-blur-xs z-30"
+                    className="fixed inset-0 z-100 bg-black/20 backdrop-blur-xs"
                 />
             )}
 
             {/* Navbar */}
-            <nav className="fixed top-5 px-5 z-50 w-full">
-                <div className={`grid grid-cols-2 md:grid-cols-3 border border-main px-2 py-2 backdrop-blur-xl rounded-main duration-200
+            <nav className="fixed top-5 z-100 w-full px-5">
+                <div className={`grid grid-cols-2 rounded-main border border-main px-2 py-2 backdrop-blur-xl duration-200 md:grid-cols-3
                     ${isScrolled || activeMega ? "bg-white/80 backdrop-blur-xl" : "bg-white"}
                     ${visible ? "translate-y-0" : "translate-y-[-200%]"}
                 `}>
 
                     {/* Logo */}
-                    <Link href="/" className="flex items-center gap-3 justify-self-start">
-                        <div className="flex size-11 items-center justify-center rounded-2xl bg-primary text-lg font-bold text-white shadow-md">
-                            Q
+                    <Link href="/" className="justify-self-start flex items-center gap-3">
+                        <div className="flex size-12 items-center justify-center rounded-secondary bg-white border border-border text-lg font-bold text-white shadow-md">
+                            <Image
+                                width={50}
+                                height={50}
+                                src="/logo.png"
+                                alt="" />
                         </div>
                         <div className="hidden sm:block">
-                            <h2 className="text-lg font-bold tracking-tight text-foreground">QSI Certification</h2>
+                            <h2 className="text-lg font-bold tracking-tight text-mainBlue">Qualified Sertifikasi Indonesia</h2>
                             <p className="text-xs text-muted-foreground">Professional ISO Services</p>
                         </div>
                     </Link>
 
                     {/* Desktop Navigation */}
-                    <div className="hidden items-center gap-8 lg:flex justify-self-center">
-                        {navigation.map((item) => (
-                            <Link
-                                key={item.href}
-                                href={item.href}
-                                className="text-sm font-medium transition-colors duration-300 hover:text-secondary truncate"
-                            >
-                                {item.label}
-                            </Link>
-                        ))}
+                    <div className="justify-self-center hidden items-center gap-8 lg:flex">
 
-                        {/* Services trigger */}
+                        <NavLink href="/" label="Beranda" />
+
+                        {/* Layanan trigger — di antara Beranda dan Tentang Kami */}
                         <div
                             onMouseEnter={openMega}
                             onMouseLeave={closeMega}
-                            className="flex items-center gap-1 text-sm font-medium cursor-pointer hover:text-secondary transition-colors duration-300"
+                            className={`group relative flex cursor-pointer items-center gap-1 text-sm font-medium transition-colors duration-300
+                                ${isLayananActive ? "text-secondaryColor" : "text-foreground hover:text-mainColor"}`}
                         >
                             <span>Layanan</span>
                             <ChevronDown
                                 size={14}
                                 className={`transition-transform duration-300 ${activeMega ? "rotate-180" : ""}`}
                             />
+                            <div className={`absolute -bottom-1 left-1/2 -translate-x-1/2 h-0.75 rounded-full transition-all duration-300
+                                ${isLayananActive
+                                    ? "w-full opacity-100 bg-secondaryColor"
+                                    : "w-0 opacity-0 group-hover:w-full group-hover:opacity-100 bg-mainColor"}`}
+                            />
                         </div>
+
+                        <NavLink href="/tentang-kami" label="Tentang Kami" />
+                        <NavLink href="/cek-sertifikat" label="Cek Sertifikat" />
+                        <NavLink href="/kontak" label="Kontak" />
                     </div>
 
                     {/* Right CTA */}
-                    <div className="hidden items-center gap-3 lg:flex justify-self-end">
+                    <div className="justify-self-end hidden items-center gap-3 lg:flex">
                         <Button size="lg">Get Certified</Button>
                     </div>
 
-                    {/* Mobile hamburger */}
-                    <div className="flex items-center gap-2 justify-self-end lg:hidden">
+                    {/* Mobile Hamburger */}
+                    <div className="justify-self-end flex items-center gap-2 lg:hidden">
                         <button
                             onClick={toggle}
                             className="flex size-11 items-center justify-center rounded-2xl border border-border bg-background text-foreground transition-all hover:bg-muted"
@@ -101,14 +129,7 @@ export const Navbar = () => {
                 </div>
             </nav>
 
-            {/* Mega Menu */}
-            <ServiceMegaMenu
-                active={activeMega}
-                onMouseEnter={openMega}
-                onMouseLeave={closeMega}
-            />
-
-            {/* Mobile Menu */}
+            <ServiceMegaMenu active={activeMega} onMouseEnter={openMega} onMouseLeave={closeMega} />
             <MobileMenu isOpen={isOpen} onClose={close} />
         </>
     );

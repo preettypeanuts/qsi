@@ -18,6 +18,8 @@ body {
   --color-thirdColor: #10b981;
   --color-otherColor: #ffddb8;
   --color-otherColorDark: #ffb95f;
+  --color-mainBlue: #151B57;
+  
 
   --color-darkColor: #191919;
   --color-secondaryDark: #252525;
@@ -73,7 +75,7 @@ body {
 }
 
 @utility border-main {
-  @apply border-main;
+  @apply border-lightColor;
 }
 
 @theme inline {

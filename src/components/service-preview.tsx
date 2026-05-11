@@ -86,7 +86,7 @@ export const ServicesPreview = () => {
                         return (
                             <Link
                                 key={service.id}
-                                href={`/services/${service.slug}`}
+                                href={`/layanan/${service.slug}`}
                                 className="group relative overflow-hidden rounded-[2.5rem] bg-mainColor text-lightColor min-h-135"
                             >
 

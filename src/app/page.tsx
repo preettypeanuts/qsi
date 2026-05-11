@@ -28,14 +28,14 @@ export const metadata: Metadata = {
 
   openGraph: {
     title:
-      "QSI Certification | Professional ISO Certification Services",
+      "Qualified Sertifikasi Indonesia | Professional ISO Certification Services",
 
     description:
       "Trusted ISO certification services for businesses and industries across Indonesia.",
 
     url: "https://qsi-certification.com",
 
-    siteName: "QSI Certification",
+    siteName: "Qualified Sertifikasi Indonesia",
 
     locale: "id_ID",
 
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
         url: "/og/home-og.jpg",
         width: 1200,
         height: 630,
-        alt: "QSI Certification Homepage",
+        alt: "Qualified Sertifikasi Indonesia Homepage",
       },
     ],
   },
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
 
     title:
-      "QSI Certification | Professional ISO Certification Services",
+      "Qualified Sertifikasi Indonesia | Professional ISO Certification Services",
 
     description:
       "Professional ISO certification services trusted by modern businesses in Indonesia.",

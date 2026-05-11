@@ -7,6 +7,7 @@ import {
 
 import { commonData } from "@/data/common";
 import { Button } from "../ui/button";
+import Image from "next/image";
 
 export const Footer = () => {
     const t = commonData.footer;
@@ -48,19 +49,18 @@ export const Footer = () => {
                     <div>
                         <div className="flex items-center gap-3">
                             <div className="flex size-12 items-center justify-center rounded-2xl bg-secondaryColor/15">
-                                <span className="text-xl font-bold text-secondaryColor">
-                                    Q
-                                </span>
+                                <div className="flex size-12 items-center justify-center rounded-secondary bg-white border border-border text-lg font-bold text-white shadow-md">
+                                    <Image
+                                        width={50}
+                                        height={50}
+                                        src="/logo.png"
+                                        alt="" />
+                                </div>
                             </div>
 
-                            <div>
-                                <h3 className="text-xl font-bold">
-                                    {t.company.name}
-                                </h3>
-
-                                <p className="text-sm text-lightColor/60">
-                                    Certification Body
-                                </p>
+                            <div className="hidden sm:block">
+                                <h2 className="text-lg font-bold tracking-tight text-white">Qualified Sertifikasi Indonesia</h2>
+                                <p className="text-xs text-muted-foreground">Professional ISO Services</p>
                             </div>
                         </div>
 
@@ -152,7 +152,7 @@ export const Footer = () => {
                     <div className="padding flex flex-col gap-5 text-sm text-lightColor/50 lg:flex-row lg:items-center lg:justify-between">
 
                         <p>
-                            © 2026 QSI Certification. All rights reserved.
+                            © 2026 Qualified Sertifikasi Indonesia. All rights reserved.
                         </p>
 
                         <div className="flex items-center gap-6">

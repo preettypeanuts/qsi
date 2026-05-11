@@ -27,19 +27,19 @@ export const metadata: Metadata = {
         "GDP",
         "Audit Sertifikasi",
         "Lembaga Sertifikasi ISO",
-        "QSI Certification",
+        "Qualified Sertifikasi Indonesia",
     ],
 
     openGraph: {
         title:
-            "Layanan Sertifikasi ISO Profesional | QSI Certification",
+            "Layanan Sertifikasi ISO Profesional | Qualified Sertifikasi Indonesia",
 
         description:
             "Layanan sertifikasi ISO terpercaya untuk meningkatkan kualitas, keamanan, efisiensi, dan kredibilitas bisnis Anda.",
 
         url: "https://qsi-certification.com/services",
 
-        siteName: "QSI Certification",
+        siteName: "Qualified Sertifikasi Indonesia",
 
         locale: "id_ID",
 
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
                 url: "/og/services-og.jpg",
                 width: 1200,
                 height: 630,
-                alt: "QSI Certification Services",
+                alt: "Qualified Sertifikasi Indonesia Services",
             },
         ],
     },
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
         card: "summary_large_image",
 
         title:
-            "Layanan Sertifikasi ISO Profesional | QSI Certification",
+            "Layanan Sertifikasi ISO Profesional | Qualified Sertifikasi Indonesia",
 
         description:
             "Jelajahi layanan sertifikasi ISO internasional untuk berbagai kebutuhan industri modern.",

@@ -10,6 +10,7 @@ import "./globals.css";
 
 import { Footer } from "@/components/common/footer";
 import { Navbar } from "@/components/common/Navbar";
+import { FloatingButtons } from "@/components/common/floating-buttons";
 
 const pjs = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta",
@@ -26,9 +27,9 @@ export const metadata: Metadata = {
 
   title: {
     default:
-      "QSI Certification | Professional ISO Certification Services Indonesia",
+      "Qualified Sertifikasi Indonesia | Professional ISO Certification Services Indonesia",
 
-    template: "%s | QSI Certification",
+    template: "%s | Qualified Sertifikasi Indonesia",
   },
 
   description:
@@ -42,22 +43,22 @@ export const metadata: Metadata = {
     "ISO 45001",
     "ISO 27001",
     "HACCP",
-    "QSI Certification",
+    "Qualified Sertifikasi Indonesia",
     "Lembaga Sertifikasi ISO",
     "Audit ISO Indonesia",
   ],
 
   authors: [
     {
-      name: "QSI Certification",
+      name: "Qualified Sertifikasi Indonesia",
     },
   ],
 
-  creator: "QSI Certification",
+  creator: "Qualified Sertifikasi Indonesia",
 
-  publisher: "QSI Certification",
+  publisher: "Qualified Sertifikasi Indonesia",
 
-  applicationName: "QSI Certification",
+  applicationName: "Qualified Sertifikasi Indonesia",
 
   category: "Business",
 
@@ -67,14 +68,14 @@ export const metadata: Metadata = {
 
   openGraph: {
     title:
-      "QSI Certification | Professional ISO Certification Services",
+      "Qualified Sertifikasi Indonesia | Professional ISO Certification Services",
 
     description:
       "Professional ISO certification services for modern industries across Indonesia.",
 
     url: "https://qsi-certification.com",
 
-    siteName: "QSI Certification",
+    siteName: "Qualified Sertifikasi Indonesia",
 
     locale: "id_ID",
 
@@ -85,7 +86,7 @@ export const metadata: Metadata = {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "QSI Certification",
+        alt: "Qualified Sertifikasi Indonesia",
       },
     ],
   },
@@ -94,7 +95,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
 
     title:
-      "QSI Certification | Professional ISO Certification Services",
+      "Qualified Sertifikasi Indonesia | Professional ISO Certification Services",
 
     description:
       "Trusted ISO certification services for businesses and industries in Indonesia.",
@@ -134,7 +135,7 @@ export default function RootLayout({
     >
       <body className="flex min-h-full flex-col bg-background text-foreground">
         <Navbar />
-
+        <FloatingButtons />
         <main className="flex-1">
           {children}
         </main>

@@ -11,7 +11,7 @@ import {
 export const commonData = {
     footer: {
         company: {
-            name: "QSI Certification",
+            name: "Qualified Sertifikasi Indonesia",
             tagline:
                 "Professional Certification Services for Sustainable Business Excellence",
 

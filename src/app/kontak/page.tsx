@@ -9,14 +9,14 @@ import { pageHeroData } from "@/data/page-hero-data";
 
 export const metadata: Metadata = {
     title:
-        "Kontak QSI Certification",
+        "Kontak Qualified Sertifikasi Indonesia",
 
     description:
-        "Hubungi QSI Certification untuk konsultasi sertifikasi ISO, audit, dan layanan sertifikasi profesional di Indonesia. Tim kami siap membantu kebutuhan organisasi Anda.",
+        "Hubungi Qualified Sertifikasi Indonesia untuk konsultasi sertifikasi ISO, audit, dan layanan sertifikasi profesional di Indonesia. Tim kami siap membantu kebutuhan organisasi Anda.",
 
     keywords: [
         "Kontak QSI",
-        "QSI Certification",
+        "Qualified Sertifikasi Indonesia",
         "Konsultasi ISO",
         "Sertifikasi ISO Indonesia",
         "Lembaga Sertifikasi",
@@ -29,14 +29,14 @@ export const metadata: Metadata = {
 
     openGraph: {
         title:
-            "Kontak QSI Certification | Konsultasi Sertifikasi ISO",
+            "Kontak Qualified Sertifikasi Indonesia | Konsultasi Sertifikasi ISO",
 
         description:
             "Hubungi tim profesional QSI untuk kebutuhan sertifikasi ISO, audit, dan konsultasi bisnis Anda.",
 
         url: "https://qsi-certification.com/contact",
 
-        siteName: "QSI Certification",
+        siteName: "Qualified Sertifikasi Indonesia",
 
         locale: "id_ID",
 
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
                 url: "/og/contact-og.jpg",
                 width: 1200,
                 height: 630,
-                alt: "Contact QSI Certification",
+                alt: "Contact Qualified Sertifikasi Indonesia",
             },
         ],
     },
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
         card: "summary_large_image",
 
         title:
-            "Kontak QSI Certification",
+            "Kontak Qualified Sertifikasi Indonesia",
 
         description:
             "Konsultasikan kebutuhan sertifikasi ISO perusahaan Anda bersama tim profesional QSI.",

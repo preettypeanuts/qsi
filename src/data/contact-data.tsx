@@ -12,7 +12,7 @@ export const contactPageData = {
         badge: "Contact Us",
 
         title:
-            "Get In Touch With QSI Certification",
+            "Get In Touch With Qualified Sertifikasi Indonesia",
 
         description:
             "Hubungi tim QSI untuk konsultasi sertifikasi ISO, kebutuhan audit, maupun informasi layanan profesional lainnya.",
