@@ -6,11 +6,9 @@ import {
 } from "next/font/google";
 
 import "./globals.css";
-
-
-import { Footer } from "@/components/common/footer";
 import { Navbar } from "@/components/common/Navbar";
 import { FloatingButtons } from "@/components/common/floating-buttons";
+import { Footer } from "@/components/common/footer";
 
 const pjs = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta",
@@ -135,7 +133,9 @@ export default function RootLayout({
     >
       <body className="flex min-h-full flex-col bg-background text-foreground">
         <Navbar />
+
         <FloatingButtons />
+
         <main className="flex-1">
           {children}
         </main>
