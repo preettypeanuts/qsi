@@ -32,7 +32,7 @@ export const homePageData = {
             "Trust Badge",
         ],
 
-        img: "https://lh3.googleusercontent.com/aida-public/AB6AXuBGVXabxLNptJ5bG-WSxLMvqfl9JyBq5vd4LtxJIZS-EWo9vs9cVXG-opBRtfv_tQkPjozugiWzeAjSEBVLYiws7lMoj3rihA3PW70NbG8kBosXuJYD4NBRxcALkSf1wIQytzq4ktKRPSZlvDbcVpTE5YQKcXeq_A9G18kDyB38zhPzOIW1J3xUCq-2TkuusD36e3FePfeLTL-WlBZ1jEuP8JUdTlCQtIPEUsTBCCgg1aDctYZwC0s6SnENusO83JKFItqRDjO1cfQ",
+        img: "/about.webp",
 
         headline:
             "Professional Certification Services for Sustainable Business Excellence",
@@ -74,7 +74,7 @@ export const homePageData = {
             "CTA Button",
         ],
 
-        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCzz8Y974R8Ax9blpKlKTND5Flx4ir2o24pXVT9imf7LzRPs8s2kRQEVtbgfs_qbFhcAHEwHVCweDuy1c6hgUEolNyfDM6Eg9ITyxWaXgo9LkRFTKPQb6XxWT4O37ChKBXitWpWoZdryBfBda4agowY4CGm3D66Mu1dG_s9I5oWNzRuwryPIeAgPDKycQAdDLPNs4Q4rbwReV1dm-VqBKiMsEyf1DuWe-Rsu86NhdSXMkKsQ5rxDmVFQala9hdQoU3GaHMGQHdM6xY",
+        image: "/about.webp",
 
         content:
             "PT. Qualified Sertifikasi Indonesia (QSI) adalah lembaga penilaian kesesuaian untuk sertifikasi sistem manajemen internasional (ISO) yang berkomitmen menghadirkan layanan sertifikasi yang kredibel dan bernilai tambah.",

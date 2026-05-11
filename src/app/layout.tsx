@@ -6,9 +6,10 @@ import {
 } from "next/font/google";
 
 import "./globals.css";
-import { Navbar } from "@/components/common/navbar";
+
 import { FloatingButtons } from "@/components/common/floating-buttons";
 import { Footer } from "@/components/common/footer";
+import { Navbar } from "@/components/common/navbar";
 
 const pjs = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta",

@@ -22,7 +22,7 @@ export const ShortAbout = () => {
                         />
 
                         {/* Floating Badge */}
-                        <div className="absolute bottom-5 left-5 flex items-center gap-3 rounded-2xl border border-white/10 bg-white/10 px-5 py-4 backdrop-blur-xl">
+                        <div className="absolute bottom-5 left-5 flex items-center gap-3 rounded-2xl border border-white/10 bg-darkColor/20 px-5 py-4 backdrop-blur-xl">
                             <div className="flex size-11 items-center justify-center rounded-xl bg-secondaryColor/20 text-secondaryColor">
                                 <BadgeCheck className="size-5" />
                             </div>

@@ -26,7 +26,7 @@ export const aboutPageData = {
             "QSI didirikan atas komitmen kuat terhadap pentingnya penerapan sistem manajemen di setiap organisasi dengan menghadirkan layanan sertifikasi yang independen, konsisten, dan terpercaya.",
 
         image:
-            "https://images.unsplash.com/photo-1522202176988-66273c2fd55f",
+            "/about.webp",
 
         timeline: [
             {

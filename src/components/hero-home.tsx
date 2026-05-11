@@ -70,7 +70,7 @@ export const HeroHome = () => {
                 <div className="animate-fade-up-in-200 relative min-h-80 overflow-hidden rounded-main sm:min-h-105 lg:min-h-full">
 
                     <Image
-                        src={t.img}
+                        src={"/banner.webp"}
                         alt="Professional ISO certification audit meeting"
                         fill
                         priority
@@ -84,7 +84,7 @@ export const HeroHome = () => {
                     <div className="absolute inset-x-0 bottom-0 h-40 bg-linear-to-t from-black/60 to-transparent lg:hidden" />
 
                     {/* Floating Card */}
-                    <div className="animate-fade-up-in-400 absolute bottom-4 left-4 right-4 rounded-2xl border border-white/20 bg-white/10 p-4 backdrop-blur-xl sm:bottom-6 sm:left-6 sm:right-auto sm:max-w-72 sm:p-5 lg:max-w-64">
+                    <div className="animate-fade-up-in-400 absolute bottom-4 left-4 right-4 rounded-2xl border border-white/20 bg-darkColor/10 p-4 backdrop-blur-xl sm:bottom-6 sm:left-6 sm:right-auto sm:max-w-72 sm:p-5 lg:max-w-64">
 
                         <div className="text-3xl font-bold text-white sm:text-4xl lg:text-5xl">
                             {t.card.primer}
