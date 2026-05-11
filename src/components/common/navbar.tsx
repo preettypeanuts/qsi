@@ -10,8 +10,8 @@ import { useNavbarScroll } from "./useNavbarScroll";
 import { useMegaMenu } from "./useMegaMenu";
 import { useMobileMenu } from "./useMobileMenu";
 
-import { ServiceMegaMenu } from "./ServiceMegaMenu";
-import { MobileMenu } from "./MobileMenu";
+import { ServiceMegaMenu } from "./service-mega-menu";
+import { MobileMenu } from "./mobile-menu";
 import Image from "next/image";
 import { toWhatsApp } from "@/lib/actions";
 
