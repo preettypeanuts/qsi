@@ -67,7 +67,7 @@ export const HeroHome = () => {
                 </div>
 
                 {/* Right Content */}
-                <div className="animate-fade-up-in-200 relative min-h-[320px] overflow-hidden rounded-main sm:min-h-[420px] lg:min-h-full">
+                <div className="animate-fade-up-in-200 relative min-h-80 overflow-hidden rounded-main sm:min-h-105 lg:min-h-full">
 
                     <Image
                         src={t.img}
@@ -81,7 +81,7 @@ export const HeroHome = () => {
                     <div className="absolute inset-0 bg-black/10" />
 
                     {/* Mobile Gradient */}
-                    <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-black/60 to-transparent lg:hidden" />
+                    <div className="absolute inset-x-0 bottom-0 h-40 bg-linear-to-t from-black/60 to-transparent lg:hidden" />
 
                     {/* Floating Card */}
                     <div className="animate-fade-up-in-400 absolute bottom-4 left-4 right-4 rounded-2xl border border-white/20 bg-white/10 p-4 backdrop-blur-xl sm:bottom-6 sm:left-6 sm:right-auto sm:max-w-72 sm:p-5 lg:max-w-64">
