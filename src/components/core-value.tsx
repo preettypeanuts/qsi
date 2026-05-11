@@ -34,7 +34,7 @@ export const CoreValues = () => {
                         return (
                             <div
                                 key={index}
-                                className="group relative overflow-hidden rounded-[2.5rem] border border-border bg-background p-8 transition-all duration-500 hover:-translate-y-1 hover:border-mainColor/10 hover:shadow-2xl"
+                                className="group relative overflow-hidden rounded-main border border-border bg-background p-5 md:p-8 transition-all duration-500 hover:-translate-y-1 hover:border-mainColor/10 hover:shadow-2xl"
                             >
 
                                 {/* Glow */}
@@ -48,11 +48,11 @@ export const CoreValues = () => {
                                 <div className="relative">
                                     <div className="flex items-center justify-between">
                                         {/* Icon */}
-                                        <div className="flex size-16 items-center justify-center rounded-[1.5rem] bg-mainColor text-lightColor transition-transform duration-300 group-hover:scale-105">
+                                        <div className="flex min-w-16 size-16 items-center justify-center rounded-[1.5rem] bg-mainColor text-lightColor transition-transform duration-300 group-hover:scale-105">
                                             <Icon className="size-7" />
                                         </div>
 
-                                        <h3 className="text-3xl font-bold text-foreground">
+                                        <h3 className="text-xl md:text-3xl font-bold text-foreground">
                                             {value.title}
                                         </h3>
                                     </div>

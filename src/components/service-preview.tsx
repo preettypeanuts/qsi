@@ -88,7 +88,7 @@ export const ServicesPreview = () => {
                             <Link
                                 key={service.id}
                                 href={`/layanan/${service.slug}`}
-                                className="group relative overflow-hidden rounded-[2.5rem] bg-mainColor text-lightColor min-h-135"
+                                className="group relative overflow-hidden rounded-main bg-mainColor text-lightColor min-h-135"
                             >
 
                                 {/* Image */}
@@ -179,7 +179,7 @@ export const ServicesPreview = () => {
                     })}
 
                     {/* Consultation Card */}
-                    <div className="relative overflow-hidden rounded-[2.5rem] bg-mainColor text-lightColor min-h-135">
+                    <div className="relative overflow-hidden rounded-main bg-mainColor text-lightColor min-h-135">
 
                         {/* Background */}
                         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.12),transparent_35%)]" />

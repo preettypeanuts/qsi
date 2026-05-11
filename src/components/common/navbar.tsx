@@ -63,14 +63,14 @@ export const Navbar = () => {
             )}
 
             {/* Navbar */}
-            <nav className="fixed top-5 z-100 w-full px-5">
-                <div className={`grid grid-cols-2 rounded-main border border-main px-2 py-2 backdrop-blur-xl duration-200 md:grid-cols-3
-                    ${isScrolled || activeMega ? "bg-white/80 backdrop-blur-xl" : "bg-white"}
+            <nav className="fixed top-5 z-100 w-full px-3 md:px-5">
+                <div className={`grid grid-cols-5 rounded-main border border-main px-2 py-2 backdrop-blur-xl duration-200 md:grid-cols-3
+                    ${isScrolled || activeMega ? "bg-white/80 backdrop-blur-xl border border-darkColor/30" : "bg-white"}
                     ${visible ? "translate-y-0" : "translate-y-[-200%]"}
                 `}>
 
                     {/* Logo */}
-                    <Link href="/" className="justify-self-start flex items-center gap-3">
+                    <Link href="/" className="justify-self-start flex items-center gap-3 col-span-4 md:col-span-1">
                         <div className="flex size-12 items-center justify-center rounded-secondary bg-white border border-border text-lg font-bold text-white shadow-md">
                             <Image
                                 width={50}
@@ -78,9 +78,9 @@ export const Navbar = () => {
                                 src="/logo.png"
                                 alt="" />
                         </div>
-                        <div className="hidden sm:block">
-                            <h2 className="text-lg font-bold tracking-tight text-mainBlue">Qualified Sertifikasi Indonesia</h2>
-                            <p className="text-xs text-muted-foreground">Professional ISO Services</p>
+                        <div className="block">
+                            <h2 className="md:text-lg line-clamp-2 font-bold tracking-tight text-mainBlue leading-5">Qualified Sertifikasi Indonesia</h2>
+                            <p className="text-xs text-muted-foreground md:block hidden">Professional ISO Services</p>
                         </div>
                     </Link>
 
@@ -121,7 +121,7 @@ export const Navbar = () => {
                     </div>
 
                     {/* Mobile Hamburger */}
-                    <div className="justify-self-end flex items-center gap-2 lg:hidden">
+                    <div className="justify-self-end flex items-center gap-2 lg:hidden col-span-1">
                         <button
                             onClick={toggle}
                             className="flex size-11 items-center justify-center rounded-2xl border border-border bg-background text-foreground transition-all hover:bg-muted"

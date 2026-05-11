@@ -13,7 +13,7 @@ export const Maps = () => {
             <section className="spacing pt-0">
                 <div className="margin">
 
-                    <div className="overflow-hidden rounded-[2.5rem] border border-border bg-background">
+                    <div className="overflow-hidden rounded-main border border-border bg-background">
 
                         {/* Header */}
                         <div className="border-b border-border p-8 md:p-10">

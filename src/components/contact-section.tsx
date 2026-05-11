@@ -19,7 +19,7 @@ export const ContactSection = () => {
                 <div className="grid grid-cols-1 gap-6 lg:grid-cols-[0.9fr_1.1fr]">
 
                     {/* Left Contact Info */}
-                    <div className="relative overflow-hidden rounded-[2.5rem] bg-mainColor p-8 text-lightColor md:p-10">
+                    <div className="relative overflow-hidden rounded-main bg-mainColor p-8 text-lightColor md:p-10">
 
                         {/* Glow */}
                         <div className="absolute -left-20 top-0 size-60 rounded-full bg-secondaryColor/20 blur-3xl" />
@@ -50,7 +50,7 @@ export const ContactSection = () => {
                                         const Icon = item.icon;
 
                                         const content = (
-                                            <div className="group flex items-start gap-4 rounded-[2rem] border border-white/10 bg-white/5 p-5 backdrop-blur-xl transition-all duration-300 hover:bg-white/10">
+                                            <div className="group flex items-start gap-4 rounded-main border border-white/10 bg-white/5 p-5 backdrop-blur-xl transition-all duration-300 hover:bg-white/10">
                                                 <div className="flex size-14 shrink-0 items-center justify-center rounded-2xl bg-secondaryColor/15 text-secondaryColor">
                                                     <Icon className="size-6" />
                                                 </div>
@@ -111,7 +111,7 @@ export const ContactSection = () => {
                     </div>
 
                     {/* Right Form */}
-                    <div className="rounded-[2.5rem] border border-border bg-background p-8 md:p-10">
+                    <div className="rounded-main border border-border bg-background p-8 md:p-10">
 
                         <div className="mb-5 inline-flex items-center gap-2 rounded-full bg-mainColor/10 px-4 py-2">
                             <div className="size-2 rounded-full bg-secondaryColor" />
@@ -232,7 +232,7 @@ export const ContactSection = () => {
                                                 field.placeholder
                                             }
                                             rows={6}
-                                            className="w-full rounded-[2rem] border border-border bg-background px-5 py-4 text-sm outline-none transition-all duration-300 placeholder:text-muted-foreground focus:border-mainColor"
+                                            className="w-full rounded-main border border-border bg-background px-5 py-4 text-sm outline-none transition-all duration-300 placeholder:text-muted-foreground focus:border-mainColor"
                                         />
                                     </div>
                                 ))}

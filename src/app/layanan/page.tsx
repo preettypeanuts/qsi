@@ -90,10 +90,9 @@ export default function LayananPage() {
                 image={t.image}
                 breadcrumbs={t.breadcrumbs}
             />
-            <Reveal variant="fade-up" delay={200}>
-                <ServicesGrid />
-            </Reveal>
-            
+
+            <ServicesGrid />
+
             <Reveal variant="fade-up" delay={200}>
                 <FaqService />
             </Reveal>

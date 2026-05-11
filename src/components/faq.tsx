@@ -44,7 +44,7 @@ export const FaqContact = () => {
                             return (
                                 <div
                                     key={index}
-                                    className={`rounded-[2rem] border transition-all duration-300 ${isActive
+                                    className={`rounded-main border transition-all duration-300 ${isActive
                                         ? "border-mainColor/20 bg-mainColor text-lightColor"
                                         : "border-border bg-background"
                                         }`}

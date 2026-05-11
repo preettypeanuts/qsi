@@ -13,7 +13,7 @@ export const ShortAbout = () => {
                 <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
                     
                     {/* Image */}
-                    <div className="relative overflow-hidden rounded-[2rem] min-h-105">
+                    <div className="relative overflow-hidden rounded-main min-h-105">
                         <Image
                             src={t.image}
                             alt="about preview image qsi"

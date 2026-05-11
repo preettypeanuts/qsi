@@ -35,7 +35,7 @@ export const CompanyStory = () => {
                         </p>
 
                         {/* Timeline */}
-                        <div className="relative mt-14 space-y-8 border-l border-border pl-8">
+                        <div className="relative mt-14 space-y-8 border-l border-border pl-6.5">
                             {t.timeline.map((item, index) => (
                                 <div
                                     key={index}
@@ -63,7 +63,7 @@ export const CompanyStory = () => {
                     </div>
 
                     {/* Right Image */}
-                    <div className="relative overflow-hidden rounded-[2.5rem] min-h-180">
+                    <div className="relative overflow-hidden rounded-main min-h-180">
                         <Image
                             src={t.image}
                             alt={t.title}
@@ -75,10 +75,10 @@ export const CompanyStory = () => {
                         <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/10 to-transparent" />
 
                         {/* Floating Card */}
-                        <div className="absolute bottom-6 left-6 right-6 rounded-[2rem] border border-white/10 bg-white/10 p-6 backdrop-blur-2xl">
+                        <div className="absolute bottom-6 left-6 right-6 rounded-main border border-white/10 bg-white/10 p-6 backdrop-blur-2xl">
 
-                            <div className="flex items-center gap-4">
-                                <div className="flex size-14 items-center justify-center rounded-2xl bg-secondaryColor text-mainColor">
+                            <div className="flex md:flex-row flex-col md:items-center gap-4">
+                                <div className="hidden md:flex size-14 min-w-14 items-center justify-center rounded-2xl bg-secondaryColor text-mainColor">
                                     <span className="text-lg font-bold">
                                         QSI
                                     </span>

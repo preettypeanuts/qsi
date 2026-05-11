@@ -50,7 +50,7 @@ export const ServicesGrid = () => {
             <Link
                 key={service.id}
                 href={`/layanan/${service.slug}`}
-                className="group relative overflow-hidden rounded-[2.5rem] bg-mainColor text-lightColor min-h-135"
+                className="group relative overflow-hidden rounded-main bg-mainColor text-lightColor min-h-135"
             >
 
                 {/* Image */}
@@ -141,7 +141,7 @@ export const ServicesGrid = () => {
     })}
 
     {/* Consultation Card */}
-    <div className="relative overflow-hidden rounded-[2.5rem] border border-mainColor/10 bg-mainColor text-lightColor min-h-135">
+    <div className="relative overflow-hidden rounded-main border border-mainColor/10 bg-mainColor text-lightColor min-h-135">
 
         {/* Glow */}
         <div className="absolute -top-20 right-0 size-72 rounded-full bg-secondaryColor/20 blur-3xl" />

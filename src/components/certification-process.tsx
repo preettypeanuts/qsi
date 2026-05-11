@@ -44,7 +44,7 @@ export const CertificationProcess = () => {
                                     key={index}
                                     className="group relative"
                                 >
-                                    <div className="relative flex h-full flex-col rounded-[2rem] border border-white/10 bg-white/5 p-6 backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:border-secondaryColor/30 hover:bg-white/10">
+                                    <div className="relative flex h-full flex-col rounded-main border border-white/10 bg-white/5 p-6 backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:border-secondaryColor/30 hover:bg-white/10">
 
                                         {/* Icon */}
                                         <div className="relative z-10 flex size-16 items-center justify-center rounded-2xl bg-secondaryColor/15 text-secondaryColor">

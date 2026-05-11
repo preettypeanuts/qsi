@@ -287,7 +287,7 @@ export const CekSertifikat = () => {
                 const StatusIcon = cfg.icon;
 
                 return (
-                    <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+                    <div className="fixed inset-0 z-99999 flex items-center justify-center p-4">
 
                         {/* Backdrop */}
                         <div
@@ -354,7 +354,7 @@ export const CekSertifikat = () => {
                             {/* Body */}
                             <div className="space-y-4 p-6">
 
-                                <div className="grid grid-cols-1 gap-3">
+                                <div className="grid grid-cols-1 gap-3 overflow-y-scroll md:max-h-none max-h-50 no-scrollbar">
 
                                     {[
                                         {

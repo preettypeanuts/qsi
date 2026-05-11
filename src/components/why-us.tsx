@@ -36,14 +36,14 @@ export const WhyUs = () => {
                         return (
                             <div
                                 key={index}
-                                className="group relative overflow-hidden rounded-[2rem] border border-border bg-muted/40 p-7 transition-all duration-300 hover:-translate-y-1 hover:border-mainColor/20 hover:bg-mainColor hover:text-white hover:shadow-2xl"
+                                className="group relative overflow-hidden rounded-main border border-border bg-muted/40 p-7 transition-all duration-300 hover:-translate-y-1 hover:border-mainColor/20 hover:bg-mainColor hover:text-white hover:shadow-2xl"
                             >
 
                                 {/* Glow */}
                                 <div className="absolute -right-10 -top-10 size-32 rounded-full bg-secondaryColor/10 blur-3xl transition-all duration-500 group-hover:bg-secondaryColor/20" />
 
                                 {/* Icon */}
-                                <div className="relative z-10 flex size-16 items-center justify-center rounded-2xl bg-mainColor/10 text-mainColor transition-all duration-300 group-hover:bg-white/10 group-hover:text-secondaryColor">
+                                <div className="relative z-10 flex min-w-16 size-16 items-center justify-center rounded-2xl bg-mainColor/10 text-mainColor transition-all duration-300 group-hover:bg-white/10 group-hover:text-secondaryColor">
                                     <Icon className="size-7" />
                                 </div>
 

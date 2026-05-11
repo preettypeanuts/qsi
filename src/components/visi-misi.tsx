@@ -32,7 +32,7 @@ export const VisionMission = () => {
                         <div className="mt-16 grid gap-6 lg:grid-cols-[1fr_1.2fr]">
 
                             {/* Vision Card */}
-                            <div className="relative overflow-hidden rounded-[2.5rem] border border-white/10 bg-white/5 p-8 md:p-10">
+                            <div className="relative overflow-hidden rounded-main border border-white/10 bg-white/5 p-8 md:p-10">
 
                                 {/* Glow */}
                                 <div className="absolute -right-20 -top-20 size-56 rounded-full bg-secondaryColor/10 blur-3xl" />
@@ -68,7 +68,7 @@ export const VisionMission = () => {
                                     return (
                                         <div
                                             key={index}
-                                            className="group rounded-[2rem] border border-white/10 bg-white/5 p-6 transition-all duration-300 hover:bg-white/10"
+                                            className="group rounded-main border border-white/10 bg-white/5 p-6 transition-all duration-300 hover:bg-white/10"
                                         >
                                             <div className="flex items-start gap-5">
 

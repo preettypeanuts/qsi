@@ -4,6 +4,7 @@ import Link from "next/link";
 import { X } from "lucide-react";
 import { Button } from "../ui/button";
 import { servicesData } from "@/data/service-data";
+import Image from "next/image";
 
 const navigation = [
     { label: "Beranda", href: "/" },
@@ -22,12 +23,16 @@ export const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
     if (!isOpen) return null;
 
     return (
-        <div className="fixed inset-0 z-50 bg-white flex flex-col">
+        <div className="fixed inset-0 z-999 bg-white flex flex-col">
             {/* Header */}
             <div className="flex items-center justify-between px-5 h-20 border-b border-main">
                 <div className="flex items-center gap-3">
-                    <div className="flex size-11 items-center justify-center rounded-2xl bg-primary text-lg font-bold text-white shadow-md">
-                        Q
+                    <div className="flex size-12 items-center justify-center rounded-secondary bg-white border border-border text-lg font-bold text-white shadow-md">
+                        <Image
+                            width={50}
+                            height={50}
+                            src="/logo.png"
+                            alt="Logo QSI" />
                     </div>
                     <div>
                         <h2 className="text-base font-bold tracking-tight text-foreground">Qualified Sertifikasi Indonesia</h2>
