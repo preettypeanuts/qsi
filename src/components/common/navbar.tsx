@@ -57,13 +57,16 @@ export const Navbar = () => {
             {/* Backdrop */}
             {(activeMega || isOpen) && (
                 <div
-                    onClick={() => { forceClose(); close(); }}
-                    className="fixed inset-0 z-100 bg-black/20 backdrop-blur-xs"
+                    onClick={() => {
+                        forceClose();
+                        close();
+                    }}
+                    className="fixed inset-0 top-0 z-90 bg-black/20 backdrop-blur-xs"
                 />
             )}
 
             {/* Navbar */}
-            <nav className="fixed top-5 z-100 w-full px-3 md:px-5">
+            <nav className="fixed top-5 z-120 w-full px-3 md:px-5">
                 <div className={`grid grid-cols-5 rounded-main border border-main px-2 py-2 backdrop-blur-xl duration-200 md:grid-cols-3
                     ${isScrolled || activeMega ? "bg-white/80 backdrop-blur-xl border border-darkColor/30" : "bg-white"}
                     ${visible ? "translate-y-0" : "translate-y-[-200%]"}

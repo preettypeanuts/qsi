@@ -15,7 +15,7 @@ export const ServiceMegaMenu = ({ active, onMouseEnter, onMouseLeave }: ServiceM
         <div
             onMouseEnter={onMouseEnter}
             onMouseLeave={onMouseLeave}
-            className={`fixed left-0 top-0 w-full z-999 transition-all duration-300 pt-25 px-5
+            className={`fixed left-0 top-0 w-full z-110 transition-all duration-300 pt-25 px-5
                 ${active
                     ? "opacity-100 translate-y-0 pointer-events-auto"
                     : "opacity-0 -translate-y-2 pointer-events-none"
