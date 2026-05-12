@@ -72,9 +72,10 @@ export const HeroHome = () => {
                     <Image
                         src={"/banner.webp"}
                         alt="Professional ISO certification audit meeting"
-                        fill
+                        width={500}
+                        height={500}
                         priority
-                        className="object-cover"
+                        className="object-cover w-full h-full"
                     />
 
                     {/* Overlay */}

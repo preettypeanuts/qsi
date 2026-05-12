@@ -40,9 +40,10 @@ export const ReusablePageHero = ({
                     <Image
                         src={image}
                         alt={title}
-                        fill
+                        width={1920}
+                        height={1080}
                         priority
-                        className="animate-fade-up-in object-cover"
+                        className="absolute inset-0 h-full w-full animate-fade-up-in object-cover"
                     />
 
                     {/* Main Overlay */}

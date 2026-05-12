@@ -67,8 +67,9 @@ export const CompanyStory = () => {
                         <Image
                             src={t.image}
                             alt={t.title}
-                            fill
-                            className="object-cover"
+                            width={500}
+                            height={500}
+                            className="object-cover w-full h-full"
                         />
 
                         {/* Overlay */}

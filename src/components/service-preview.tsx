@@ -88,15 +88,16 @@ export const ServicesPreview = () => {
                             <Link
                                 key={service.id}
                                 href={`/layanan/${service.slug}`}
-                                className="group relative overflow-hidden rounded-main bg-mainColor text-lightColor min-h-135"
+                                className="group relative min-h-135 overflow-hidden rounded-main bg-mainColor text-lightColor"
                             >
 
                                 {/* Image */}
                                 <Image
                                     src={service.image}
                                     alt={service.name}
-                                    fill
-                                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                                    width={800}
+                                    height={1000}
+                                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                                 />
 
                                 {/* Overlay */}

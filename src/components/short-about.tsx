@@ -11,14 +11,15 @@ export const ShortAbout = () => {
         <section className="spacing  bg-mainColor">
             <div className="padding overflow-hidden rounded-main text-lightColor">
                 <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
-                    
+
                     {/* Image */}
-                    <div className="relative overflow-hidden rounded-main min-h-105">
+                    <div className="relative min-h-105 overflow-hidden rounded-main">
                         <Image
                             src={t.image}
                             alt="about preview image qsi"
-                            fill
-                            className="object-cover"
+                            width={1200}
+                            height={1400}
+                            className="absolute inset-0 h-full w-full object-cover"
                         />
 
                         {/* Floating Badge */}
@@ -41,7 +42,7 @@ export const ShortAbout = () => {
 
                     {/* Content */}
                     <div className="flex flex-col justify-center">
-                        
+
                         {/* Label */}
                         <div className="mb-5 inline-flex w-fit items-center rounded-full bg-white/10 px-4 py-1.5 text-sm font-medium uppercase tracking-[0.2em] text-secondaryColor">
                             About QSI

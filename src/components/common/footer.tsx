@@ -60,7 +60,7 @@ export const Footer = () => {
                                         width={50}
                                         height={50}
                                         src="/logo.png"
-                                        alt="" />
+                                        alt="Logo QSI" />
                                 </div>
                             </div>
 
